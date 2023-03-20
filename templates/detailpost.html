@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}FOCo{% endblock %}
+
+{% block description %}This page is an awesome home page.{% endblock %}
+
+
+{% block content %}
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="post-header">
+        <div class="container-fluid">
+            <div class="list-group">
+                <div class="list-group-item-text list-group-item list-group-item-warning">
+                    <table class="table table-condensed">
+                        <thead>
+                        <tr>
+                            <th>Transaction</th>
+                            <th>Detail</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>Item id:</th>
+                            <th>{{ request_user_item_id }}</th>
+                        </tr>
+                        <tr>
+                            <th>Receiver name:</th>
+                            <th>{{ request_user_name }}</th>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}FOCo{% endblock %}
+
+{% block description %}This page is an awesome home page.{% endblock %}
+
+
+{% block content %}
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="post-header">
+        <div class="container-fluid">
+            <div class="list-group">
+                <div class="list-group-item-text list-group-item list-group-item-warning">
+                    <h3 style="color:#27AE60">{{title}}</h3>
+                    {% for e in posts %}
+                        <div class="panel panel-success panel-shadow">
+                            <div class="panel-heading">
+                                <div class="category">{{ e.user_item_category }}</div>
+                                <a class="InterestFormPopUp" data-toggle="modal" data-target="#interestForm"
+                                   data-user_name="{{ e.user_name }}"
+                                   data-user_email="{{ e.user_email }}"
+                                   data-user_address="{{ e.user_address }}"
+                                   data-user_phonenumber="{{ e.user_phonenumber }}"
+                                   data-user_item_id ="{{ e.user_item_id }}"
+                                   data-user_item ="{{ e.user_item }}">{{ e.user_item}}</a>
+                            </div>
+                            <div class="panel-body">
+                                <a class="InterestFormPopUp" data-toggle="modal" data-target="#interestForm"
+                                   data-user_name="{{ e.user_name }}"
+                                   data-user_email="{{ e.user_email }}"
+                                   data-user_address="{{ e.user_address }}"
+                                   data-user_phonenumber="{{ e.user_phonenumber }}"
+                                   data-user_item_id ="{{ e.user_item_id }}"
+                                   data-user_item ="{{ e.user_item }}">{{ e.user_item_description }}</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+
+    <div id="interestForm" class="overlay Form modal interestForm" tabindex="-1"  role="dialog">
+        <div class="popup">
+            <button class="close" data-dismiss="modal" >×</button>
+            <h1>Interest</h1>
+            <small>Please review contact info for your interested item(s)</small>
+            <div class="container-fluid" style="margin-top: 10px;">
+                <div class="list-group">
+                    <div class="list-group-item-text list-group-item list-group-item-warning">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th id="user_item"></th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th>Name</th>
+                                <th id="user_name"></th>
+                            </tr>
+                            <tr>
+                                <th>Address</th>
+                                <th id="user_address"></th>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <th id="user_email"></th>
+                            </tr>
+                            <tr>
+                                <th>Phone</th>
+                                <th id="user_phonenumber"></th>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <form action="/delete" method="POST" id="interestFormDetail">{% csrf_token %}
+                    <input placeholder="Item_id" type="hidden" name="request_user_item_id"  id="user_item_id" value=""/>
+                    <input class="formBtn" type="submit" id="interestForm-submit"/>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+   $(document).ready(function() 
+       $('#interestForm-submit').on('click', function (event) {
+        alert("thanks!")
+       });
+
+
+{% endblock %}
