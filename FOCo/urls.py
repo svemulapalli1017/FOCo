@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from givegetgreen.home.views import HomeView
-from givegetgreen.addPost.views import AddPostView
-from givegetgreen.deletePost.views import DeletePostView
+from FOCo.home.views import HomeView
+from FOCo.addPost.views import AddPostView
+from FOCo.deletePost.views import DeletePostView
 from django.views.generic import RedirectView
 
 admin.autodiscover()

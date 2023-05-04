@@ -5,24 +5,12 @@ import sqlite3
 
 import search
 
-NUM_GENERATE = 1000
+NUM_GENERATE = 100
 
-CATEGORIES = ['miscellaneous', 'appliance', 'bedding', 'toys', 'books', 'clothing',
+CATEGORIES = ['miscellaneous', 'appliance', 'bedding', 'books', 'clothing',
 	'seasonal', 'electronics', 'household', 'kitchen', 'sports']
 
-LOCATIONS = [
-	'university of california irvine',
-	'university of california san diego',
-	'university of california davis',
-	'university of california los angeles',
-	'university of california berkeley',
-	'university of california santa barbara',
-	'university of california berkley',
-	'university of california merced',
-	'university of california riverside',
-	'university of california san francisco',
-	'university of california santa cruz',
-]
+LOCATIONS = [76301 , 76302, 76305, 76306, 76308, 76309, 76310, 76311, 76367,94538,32456,94568,94356]
 
 def generate_postings(count):
 	postings = []
@@ -44,7 +32,7 @@ def generate_postings(count):
 
 
 def write_database(postings):
-	conn=sqlite3.connect('givegetgreen_db');
+	conn=sqlite3.connect('FOCo_db');
 	c=conn.cursor()
 	for post in postings:
 		# name email phone address category description title
@@ -76,4 +64,4 @@ if __name__ == '__main__':
 
 	postings = generate_postings(NUM_GENERATE)
 	write_database(postings)
-	search.create_index("indexdir", "givegetgreen_db")
+	search.create_index("indexdir", "FOCo_db")

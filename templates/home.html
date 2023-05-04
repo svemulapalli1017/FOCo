@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% load static %}
-{% block title %}FOCo - For Our Community{% endblock %}
+
+{% block title %}FOCo{% endblock %}
 
 {% block description %}This page is an awesome home page.{% endblock %}
 
@@ -12,15 +12,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <hr class="intro-divider">
-                    <div class="intro-message">
-                        <hr class="intro-divider">
                         <h1>{{ title }}</h1>
-                        <h4>a crowd sourced donation service <br>designed to promote the principles of reuse and recycling</h4>
+                        <h4>a crowd sourced donation service <br>designed to promote the principles of reuse and recycling </h4>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-buttons">
                             <li id="give-button">
@@ -45,7 +38,7 @@
         <small>Please submit details for your donated item(s)</small>
         <form action="/home" method="POST" id="giveform">{% csrf_token %}
             <input placeholder="Name" type="text" name="user_name" required />
-            <input placeholder="Email" type="email" name="user_email" required />
+            <input placeholder="Enter Your Student Email" type="email" name="user_email" required />
             <input placeholder="Address" type="text" name="user_zipcode" required />
             <input placeholder="Phone (xxx-xxx-xxxx)" type="tel" pattern="^\d{3}-\d{3}-\d{4}$" name="user_phone" required />
             <select class="form-control category-dropdown" name="user_item_category">
@@ -53,7 +46,6 @@
                 <option value="Miscellaneous">Miscellaneous</option>
                 <option value="Appliance">Appliance</option>
                 <option value="Bedding">Bedding</option>
-                <option value="Toys">Toys</option>
                 <option value="Books">Books</option>
                 <option value="Clothing">Clothing</option>
                 <option value="Seasonal">Seasonal</option>
@@ -79,7 +71,6 @@
                 <option value="Miscellaneous">Miscellaneous</option>
                 <option value="Appliance">Appliance</option>
                 <option value="Bedding">Bedding</option>
-                <option value="Toys">Toys</option>
                 <option value="Books">Books</option>
                 <option value="Clothing">Clothing</option>
                 <option value="Seasonal">Seasonal</option>
@@ -89,7 +80,7 @@
                 <option value="Sports">Sports</option>
             </select>
             <input placeholder="Item" type="text" name="search_item" required />
-{#            <input placeholder="Email" type="email" name="user_email" required />#}
+{#            <input placeholder="Enter Your Student Email" type="email" name="user_email" required />#}
             <input placeholder="Address" type="text" name="user_address" required />
 {#            <input placeholder="Phone (xxx-xxx-xxxx)" type="tel" pattern="^\d{3}-\d{3}-\d{4}$" required />#}
             <input placeholder="Max Distance (miles)" type="number" name="distance"required />

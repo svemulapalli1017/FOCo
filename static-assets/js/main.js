@@ -37,7 +37,7 @@ $(function() {
   });
 
   $( "#giveform" ).submit(function( event ) {
-    alert('Thank you for your donation! Someone will contact you if they are interested.');
+    alert('Thank you for your donation! Someone will contact you if they are interested.We appreciate your generosity and willingness to contribute to our cause');
 
   });
 

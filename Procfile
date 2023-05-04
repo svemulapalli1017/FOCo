@@ -1,1 +1,1 @@
-web: gunicorn givegetgreen.wsgi --log-file -
+web: gunicorn FOCo.wsgi --log-file -

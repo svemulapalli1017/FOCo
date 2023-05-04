@@ -1,7 +1,7 @@
 #! /usr/bin/env python2.7
 from django.views.generic import TemplateView
 from django.shortcuts import redirect
-from givegetgreen.posting.models import Posting
+from FOCo.posting.models import Posting
 
 class DeletePostView(TemplateView):
     template_name = 'detailpost.html'

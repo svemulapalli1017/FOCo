@@ -1,7 +1,7 @@
 #! /usr/bin/env python2.7
 from django.views.generic import TemplateView
 from search import search
-from givegetgreen.posting.models import Posting
+from FOCo.posting.models import Posting
 
 class AddPostView(TemplateView):
     template_name = 'viewpost.html'
@@ -18,7 +18,7 @@ class AddPostView(TemplateView):
             distance = int(request.POST.get('distance', ''))
             address = request.POST.get('user_address', '')
 
-            search.create_index("indexdir", "givegetgreen_db")
+            search.create_index("indexdir", "FOCo_db")
 
             query = category + " " + search_item
             results = search.query_result(address, query, distance)
